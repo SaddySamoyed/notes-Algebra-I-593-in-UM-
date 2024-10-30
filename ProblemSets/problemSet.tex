@@ -1,0 +1,546 @@
+\documentclass[lang=cn,11pt]{template}
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}%
+\usepackage{amssymb}%
+
+\title{593}
+
+\begin{document}
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+
+
+
+\chapter{ProblemSet 1}
+
+\section{Ring Isomorphism of Quotient Ring}
+Let \( R = \mathbb{Z}/6\mathbb{Z} \) and \( S = \{1, 2, 4\} \subseteq R \). Show that there is a ring isomorphism
+\[
+S^{-1}R \cong \mathbb{Z}/3\mathbb{Z}.
+\]
+
+\section{Isomorphism Involving Quotient Ring and Polynomial Ring}
+Let \( R \) be a commutative ring and let \( a \in R \). Show that if \( R_a \) denotes \( S^{-1}R \), where \( S = \{a^n \mid n \in \mathbb{Z}_{\geq 0}\} \), then there is a ring isomorphism
+\[
+R[x]/(ax - 1) \cong R_a.
+\]
+
+\section{Idempotent Elements in Rings}
+Let \( R \) be a ring. An element \( a \in R \) is idempotent if \( a^2 = a \). For example, 0 and 1 are idempotents. A nontrivial idempotent is an idempotent that is different from 0 and 1.
+\begin{itemize}
+    \item[i)] Show that if \( a \in R \) is an idempotent, then \( 1 - a \) is an idempotent, too.
+    \item[ii)] Suppose that \( R \) is commutative. Show that \( R \) has a nontrivial product decomposition (that is, there is an isomorphism \( R \cong R_1 \times R_2 \), where \( R_1 \) and \( R_2 \) are nonzero rings) if and only if \( R \) has nontrivial idempotents.
+\end{itemize}
+
+\section{Idempotent and Nilpotent Elements}
+Let \( R \) be a ring and \( a, b \in R \) such that \( ab = 1 \) and \( ba \neq 1 \).
+\begin{itemize}
+    \item[i)] Show that \( 1 - ba \) is an idempotent element.
+    \item[ii)] Show that for every positive integer \( n \), the element \( b^n(1 - ba) \) is nilpotent (an element \( u \in R \) is nilpotent if \( u^m = 0 \) for some positive integer \( m \)).
+    \item[iii)] Deduce that \( R \) has infinitely many nilpotent elements.
+\end{itemize}
+
+\section{Ideals in Direct Product of Rings}
+Let \( R_1 \) and \( R_2 \) be rings and let \( R = R_1 \times R_2 \). Show that if \( I \) is a left (right, two-sided) ideal of \( R \), then there are left (respectively right, two-sided) ideals \( I_1 \subseteq R_1 \) and \( I_2 \subseteq R_2 \) such that \( I = I_1 \times I_2 \).
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 3}
+
+\section{Euclidean Algorithm in Euclidean Domains}
+Prove that one can use the Euclidean Algorithm for finding the gcd in any Euclidean domain, as follows. Suppose that \( R \) is an Euclidean domain and 
+\[
+N : R \setminus \{0\} \rightarrow \mathbb{Z}_{\geq 0}
+\]
+is the corresponding function. Let \( a, b \in R \) be both nonzero and consider the following algorithm:
+\begin{itemize}
+    \item[i)] Write \( a = bq_1 + r_1 \), such that either \( r_1 = 0 \) or \( (r_1 \neq 0 \text{ and } N(r_1) < N(b)) \). If \( r_1 = 0 \), then stop.
+    \item[ii)] Otherwise, write \( b = r_1q_2 + r_2 \), such that either \( r_2 = 0 \) or \( (r_2 \neq 0 \text{ and } N(r_2) < N(r_1)) \). If \( r_2 = 0 \), then stop.
+    \item[iii)] Otherwise, we write \( r_1 = r_2q_3 + r_3 \), and repeat.
+\end{itemize}
+Since \( N(b) > N(r_1) > N(r_2) > \dots \) and these are all nonnegative integers, this process must eventually terminate. Show that in this case \( r_{n-1} = \gcd(a, b) \) (with the convention that \( r_0 = b \)).
+
+\section{Isomorphisms Involving Group Rings}
+Let \( R \) be a commutative ring, \( G \) a group, and consider the group ring \( R[G] \) of \( G \) with coefficients in \( R \).
+\begin{itemize}
+    \item[i)] Show that if \( G \cong \mathbb{Z}/n\mathbb{Z} \), then
+    \[
+    R[G] \cong R[x]/(x^n - 1).
+    \]
+    \item[ii)] Show that if \( G \cong \mathbb{Z}^n \), then \( R[G] \) is isomorphic to the ring of Laurent polynomials
+    \[
+    R[x_1, x_1^{-1}, \dots, x_n, x_n^{-1}]
+    \]
+    (the ring of Laurent polynomials can be defined as the ring of fractions \( R[x_1, \dots, x_n]_{x_1 \dots x_n} \) of the polynomial ring \( R[x_1, \dots, x_n] \)).
+\end{itemize}
+
+\section{Chinese Remainder Theorem for Commutative Rings}
+Let \( R \) be a commutative ring.
+\begin{itemize}
+    \item[i)] Suppose that \( I_1 \) and \( I_2 \) are ideals in \( R \) such that \( I_1 + I_2 = R \). Show that given any element \( a \in R \), there is an element \( b \in R \) such that \( b \in I_2 \) and \( b - a \in I_1 \). Using this (and the corresponding fact with the roles of \( I_1 \) and \( I_2 \) switched), deduce that the canonical homomorphism
+    \[
+    R \rightarrow R/I_1 \times R/I_2
+    \]
+    is surjective and conclude that
+    \[
+    R/I_1 \cap I_2 \cong R/I_1 \times R/I_2.
+    \]
+    \item[ii)] Suppose that \( I_1, \dots, I_n \) are ideals in \( R \) such that \( I_i + I_j = R \) for all \( i \neq j \). Show that in this case we have \( I_1 + (I_2 \cap \dots \cap I_n) = R \). Use this, the assertion in i), and induction on \( n \) to show that the canonical homomorphism \( R \rightarrow \prod_{i=1}^n R/I_i \) induces an isomorphism
+    \[
+    R/(I_1 \cap \dots \cap I_n) \cong \prod_{i=1}^n R/I_i.
+    \]
+    \item[iii)] Show that if \( I_1, \dots, I_n \) are mutually distinct maximal ideals in \( R \), then they satisfy the hypothesis in ii).
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 4}
+
+\section{Prime Elements in R}
+Show that if \( u \in R \) is such that \( N(u) \) is a prime integer, then \( u \in R \) is a prime element.
+
+\section{Prime Factors of an Integer in R}
+Deduce that if \( p \in Z \) is a prime integer, then the number of prime factors of \( p \) in \( R \) is either 1 or 2. For example, what is the irreducible decomposition of 2 in \( R \)?
+
+\section{Cases for Prime Elements in R}
+Show that if \( \pi \in R \) is a prime element, then we are in one of the following two cases:
+
+\begin{itemize}
+    \item \(\pi\) is associated (in \( R \)) to a prime integer \( p \).
+    \item There is a prime integer \( p \) that factors in \( R \) as \( (a + bi)(a - bi) \), and \( \pi \) is associated with \( a + bi \) or \( a - bi \). (Note also that \( a + bi \) and \( a - bi \) are associated only when \( p = 2 \)).
+\end{itemize}
+
+\section{Equivalency Conditions for Prime Integer p}
+Let \( p > 2 \) be a prime integer. Show that the following are equivalent:
+
+\begin{itemize}
+    \item \( p \) is not prime in \( R \).
+    \item There are integers \( a \) and \( b \) such that \( p = a^2 + b^2 \).
+    \item \( p \equiv 1 \pmod{4} \).
+\end{itemize}
+
+Hint: The implications \( i \Leftrightarrow ii \) and \( ii \Rightarrow iii \) are easier. For the implication \( iii \Rightarrow ii \), you can use the fact that the group \( (Z/pZ)^* \) of units in \( Z/pZ \) is cyclic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 5}
+
+\section{Free Modules in a Ring}
+Show that if \( R \) is a ring and \( M \) is a left \( R \)-module, then \( M \) is free if and only if there is a set \( I \) such that \( M \cong R^{(I)} \).
+
+\section{Free R-Modules and Principal Ideals}
+Show that if \( R \) is a domain and \( I \) is an ideal in \( R \), then \( I \) is a free \( R \)-module if and only if it is a principal ideal.
+
+\section{Cardinality of Bases in a Commutative Ring}
+Let \( R \) be a commutative ring and \( M \) an \( R \)-module. Show that if \( A, B \subseteq M \) are two bases of \( M \), then \( A \) and \( B \) have the same cardinality.
+
+Hint: Assume this result is known when \( R \) is a field, and reduce the general case to it. Assume \( R \neq \{0\} \) and let \( m \) be a maximal ideal in \( R \), with \( K = R/m \). Show that if \( A \) is a basis of \( M \), then \( \{u \mid u \in A\} \) is a basis of the \( K \)-vector space \( M/mM \).
+
+\section{Non-Commutative Ring Counterexample for Basis Cardinality}
+We now give an example to show that the result in the previous problem does not hold when \( R \) is not commutative. Let \( S \) be any nonzero commutative ring and consider the set \( R \) of infinite matrices with entries in \( S \), with finitely many nonzero entries in each column. This consists of \( (a_{i,j})_{i,j \geq 1} \) with \( a_{ij} \in S \) for all \( i \) and \( j \), and such that for all \( j \geq 1 \), there are only finitely many \( i \) with \( a_{ij} \neq 0 \).
+
+Define matrix multiplication in the usual way for elements in \( R \): for \( A = (a_{ij}) \) and \( B = (b_{ij}) \) in \( R \), the product \( AB \) is given by \( (c_{ij}) \), where
+
+\[
+c_{ij} = \sum_{k \geq 1} a_{ik}b_{kj}.
+\]
+
+Thus, \( R \) forms a ring with this multiplication. Consider \( R \) with the usual left \( R \)-module structure and the following elements of \( R \):
+
+\[
+f_1 = (a_{ij}), \quad \text{where } a_{ij} = 1 \text{ if } j = 2i - 1 \text{ and } 0 \text{ otherwise},
+\]
+\[
+f_2 = (b_{ij}), \quad \text{where } b_{ij} = 1 \text{ if } j = 2i \text{ and } 0 \text{ otherwise}.
+\]
+
+\begin{itemize}
+    \item[i)] For \( C = (c_{ij}) \in R \), compute \( Cf_1 \) and \( Cf_2 \).
+    \item[ii)] Deduce that \( f_1 \) and \( f_2 \) form a basis of \( R \).
+    \item[iii)] Deduce that we have an isomorphism \( R \cong R \oplus R \).
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 6}
+
+\section{Generators of Modules over Local Rings}
+Let \( (R, m) \) be a local ring and let \( K = R/m \). Given a finitely generated \( R \)-module \( M \), let \( \overline{M} = M/mM \), which we view as a \( K \)-vector space.
+\begin{itemize}
+    \item[i)] Show that \( u_1, \dots, u_n \) generate \( M \) if and only if \( u_1, \dots, u_n \in \overline{M} \) generate \( \overline{M} \) as a \( K \)-vector space.
+    \item[ii)] Deduce that every minimal system of generators of \( M \) has \( r \) elements, where \( r = \dim_K(\overline{M}) \).
+\end{itemize}
+
+\section{Nakayama's Lemma for Ideals in a Domain}
+Prove the following version of Nakayama’s Lemma: if \( R \) is a domain and \( I, J \) are ideals in \( R \) such that \( I \neq R \) and \( IJ = J \), then \( J = (0) \).
+
+\section{Finite Length of Modules over Polynomial Rings}
+Let \( R = k[x, y] \), where \( k \) is a field, and let \( m = (x, y) \). Show that if \( M = R/m^d \), then \( M \) is an \( R \)-module of finite length and compute its length.
+
+\section{Ideals in Local Noetherian Rings}
+Let \( (R, m) \) be a local Noetherian ring, with \( m = (a) \). Show that every nonzero ideal \( I \) of \( R \) is equal to \( (a^n) \) for some \( n \geq 0 \).
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 6}
+
+\section{Generators of Modules over Local Rings}
+Let \( (R, m) \) be a local ring and let \( K = R/m \). Given a finitely generated \( R \)-module \( M \), let \( \overline{M} = M/mM \), which we view as a \( K \)-vector space.
+\begin{itemize}
+    \item[i)] Show that \( u_1, \dots, u_n \) generate \( M \) if and only if \( u_1, \dots, u_n \in \overline{M} \) generate \( \overline{M} \) as a \( K \)-vector space.
+    \item[ii)] Deduce that every minimal system of generators of \( M \) has \( r \) elements, where \( r = \dim_K(\overline{M}) \).
+\end{itemize}
+
+\section{Nakayama's Lemma for Ideals in a Domain}
+Prove the following version of Nakayama’s Lemma: if \( R \) is a domain and \( I, J \) are ideals in \( R \) such that \( I \neq R \) and \( IJ = J \), then \( J = (0) \).
+
+\section{Finite Length of Modules over Polynomial Rings}
+Let \( R = k[x, y] \), where \( k \) is a field, and let \( m = (x, y) \). Show that if \( M = R/m^d \), then \( M \) is an \( R \)-module of finite length and compute its length.
+
+\section{Ideals in Local Noetherian Rings}
+Let \( (R, m) \) be a local Noetherian ring, with \( m = (a) \). Show that every nonzero ideal \( I \) of \( R \) is equal to \( (a^n) \) for some \( n \geq 0 \).
+
+
+
+
+
+
+
+\chapter{ProblemSet 7}
+
+\section{Uniqueness of Elementary Divisors}
+The goal of this problem is to prove the uniqueness of elementary divisors. Let \( R \) be a PID and let
+\[
+M = R^r \oplus R/(p_1^{m_1}) \oplus \dots \oplus R/(p_d^{m_d}) \quad \text{and} \quad N = R^s \oplus R/(q_1^{n_1}) \oplus \dots \oplus R/(q_e^{n_e}),
+\]
+where \( p_1, \dots, p_d, q_1, \dots, q_e \) are prime elements in \( R \) and \( m_1, \dots, m_d, n_1, \dots, n_e \) are positive integers. Suppose that we have an isomorphism of \( R \)-modules \( \varphi : M \rightarrow N \).
+\begin{itemize}
+    \item[i)] Show that \( r = \operatorname{rank}(M) = \operatorname{rank}(N) = s \).
+    \item[ii)] Our goal is to show that \( d = e \) and after reordering the \( q_i^{n_i} \), we have that each \( p_i \) is associated to \( q_i \) and \( m_i = n_i \) for \( 1 \leq i \leq d \). Show that for every prime \( p \) in \( R \),
+    \[
+    \{u \in M \mid p^k u = 0 \text{ for some } k\} \cong \{u \in N \mid p^k u = 0 \text{ for some } k\}.
+    \]
+    Deduce that we may assume that \( p_i = p = q_j \) for all \( i \) and \( j \). From now on, make this assumption.
+    \item[iii)] After possibly reordering the \( m_i \) and the \( n_j \), assume that \( m_1 \leq \dots \leq m_d \) and \( n_1 \leq \dots \leq n_e \), and argue by induction on \( m_d \). Show that \( \varphi \) induces isomorphisms \( pM \cong pN \) and \( M/pM \cong N/pN \) to deduce, using induction, that \( d = e \) and \( m_i = n_i \) for all \( i \).
+\end{itemize}
+
+\section{Uniqueness of Irreducible Factors}
+Use the result in Problem 1 to prove the uniqueness of the irreducible factors of \( M \) from the uniqueness of the prime divisors of \( M \). More precisely, show that the following holds: suppose that \( R \) is a PID and
+\[
+M = R^r \oplus R/(a_1) \oplus \dots \oplus R/(a_d) \quad \text{and} \quad N = R^s \oplus R/(b_1) \oplus \dots \oplus R/(b_e),
+\]
+where \( a_1, \dots, a_d, b_1, \dots, b_e \) are nonzero elements of \( R \) such that \( a_1 \mid a_2 \mid \dots \mid a_d \) and \( b_1 \mid b_2 \mid \dots \mid b_e \). Show that if \( M \cong N \), then \( r = s \), \( d = e \), and \( a_i \) is associated to \( b_i \) for all \( i \).
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 8}
+
+\section{Smith Normal Form of a Matrix}
+The goal of this problem is to discuss the Smith normal form of a matrix. Let \( K \) be a field and let \( A = (a_{i,j}) \) be a matrix in \( M_{m,n}(K[x]) \). We apply to the matrix \( A \) the following row/column operations:
+\begin{itemize}
+    \item[i)] Switch two rows (columns);
+    \item[ii)] Multiply one row (column) by an element \( \lambda \in K^* \);
+    \item[iii)] Add to one row (column) another row (column) multiplied by the same \( P \in K[x] \).
+\end{itemize}
+Show that after performing finitely many such operations, the matrix \( A \) is replaced by a diagonal matrix \( B = (b_{i,j}) \), where \( b_{i,i} = 1 \) for \( 1 \leq i \leq s \) (for some nonnegative integer \( s \)), \( b_{s+i,s+i} = f_i \) is a monic polynomial of degree \( \geq 1 \), for \( 1 \leq i \leq r \) (for some nonnegative integer \( r \)), with \( f_1 \mid f_2 \mid \dots \mid f_r \), while all other \( b_{i,j} \) are 0.
+
+The matrix \( B \) is the Smith normal form of \( A \).
+
+\textit{Hint:} Argue by induction on \( \min\{m, n\} \), starting with the case in which this minimum is 1. For a fixed matrix size, assuming that not all entries of the matrix are 0 (a trivial case), argue by induction on \( \min\{\deg(a_{i,j}) \mid a_{i,j} \neq 0\} \). A key ingredient is the division algorithm.
+
+\section{Smith Normal Form of \( xI_3 - A \)}
+Find the Smith normal form of \( xI_3 - A \), where
+\[
+A = \begin{pmatrix} 2 & 2 & 3 \\ 1 & 3 & 3 \\ -1 & -2 & -2 \end{pmatrix}.
+\]
+
+\section{Injective Map for a \( K[x] \)-Module}
+Show that if \( M \) is the \( K[x] \)-module given by \( K^n \) and the \( K \)-linear map \( T : K^n \rightarrow K^n \) corresponds to the matrix \( A \), then the matrix \( xI_n - A \in M_n(K[x]) \) corresponds to an injective \( K[x] \)-linear map \( \varphi : K[x]^n \rightarrow K[x]^n \), with \( K[x]^n / \operatorname{Im}(\varphi) \cong M \).
+
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 9}
+
+\section{Non-existence of Matrix with Specific Order Constraints}
+Prove that there are no \( 3 \times 3 \) matrices \( A \) over \( \mathbb{Q} \) with \( A^8 = I \), but \( A^4 \neq I \).
+
+\section{Jordan Canonical Form with Given Minimal Polynomial and Rank}
+Let \( A \) be a \( 5 \times 5 \) matrix such that the minimal polynomial is \( (x - 1)^3 \) and the rank of \( A - I \) is 2. Determine the Jordan canonical form of \( A \).
+
+\section{Similarity of a Matrix and its Transpose}
+Prove that any matrix \( A \in M_n(K) \) is similar to its transpose \( A^t \).
+
+\section{Jordan Canonical Form of Matrix with Uniform Entries over \( F_p \)}
+Determine the Jordan canonical form for the \( n \times n \) matrix over \( F_p = \mathbb{Z}/p\mathbb{Z} \) whose entries are all equal to 1.
+
+
+
+
+
+
+
+
+
+
+
+\chapter{ProblemSet 10}
+
+\section{Yoneda's Lemma in Category Theory}
+Prove the following assertions known as Yoneda’s Lemma. Let \( C \) be an arbitrary category and \( X, Y \) objects in \( C \).
+\begin{itemize}
+    \item[i)] Show that if \( u \in \operatorname{Hom}_C(Y, X) \), then we have a natural transformation
+    \[
+    T : \operatorname{Hom}_C(X, -) \rightarrow \operatorname{Hom}_C(Y, -)
+    \]
+    which for \( A \in \operatorname{Ob}(C) \), is given by
+    \[
+    T_A : \operatorname{Hom}_C(X, A) \rightarrow \operatorname{Hom}_C(Y, A), \quad v \mapsto v \circ u.
+    \]
+    \item[ii)] Show that every natural transformation \( T \) corresponds to a unique \( u \in \operatorname{Hom}_C(Y, X) \).
+    
+    \textit{Hint:} Show first that we must have \( u = T_X(1_X) \).
+    
+    \item[iii)] Prove the dual assertions of i) and ii): every natural transformation
+    \[
+    S : \operatorname{Hom}_C(-, X) \rightarrow \operatorname{Hom}_C(-, Y)
+    \]
+    corresponds to a unique \( w \in \operatorname{Hom}_C(X, Y) \) (that is, \( T_Z(h) = w \circ h \) for every \( h \in \operatorname{Hom}_C(Z, X) \)).
+\end{itemize}
+
+\section{Direct Limits in Category Theory}
+Let \( (I, \leq) \) be a directed partially ordered set (directed means that for every \( i, j \in I \), there exists \( k \in I \) such that \( i \leq k \) and \( j \leq k \)) and let \( C \) be a category. A direct system in \( C \) is the same as an inverse system in the dual category \( C^\circ \): explicitly, it consists of a family \( (A_i)_{i \in I} \) of objects in \( C \) and for every \( i \leq j \) in \( I \) a morphism \( \varphi_{ij} : A_i \rightarrow A_j \) such that the following conditions are satisfied:
+\begin{itemize}
+    \item[1)] For every \( i \in I \), we have \( \varphi_{ii} = 1_{A_i} \).
+    \item[2)] For every \( i \leq j \leq k \) in \( I \), we have \( \varphi_{jk} \circ \varphi_{ij} = \varphi_{ik} \).
+\end{itemize}
+A direct limit of a direct system is an object \( \varinjlim A_i \) in \( \operatorname{Ob}(C) \) together with a family of morphisms \( f_i : A_i \rightarrow \varinjlim A_i \) that satisfy the definition of inverse limit in \( C^\circ \); explicitly, this means that the following conditions hold:
+\begin{itemize}
+    \item[a)] For every \( i \leq j \) in \( I \) we have \( f_j \circ \varphi_{ij} = f_i \).
+    \item[b)] For every \( B \in \operatorname{Ob}(C) \) and every family of morphisms \( g_i : A_i \rightarrow B \) for \( i \in I \) that satisfy \( g_j \circ \varphi_{ij} = g_i \) whenever \( i \leq j \), there is a unique morphism \( u : \varinjlim A_i \rightarrow B \) such that \( u \circ f_i = g_i \) for all \( i \in I \).
+\end{itemize}
+
+Show that the following hold:
+\begin{itemize}
+    \item[i)] When the relation in \( I \) is given by \( i \leq j \) iff \( i = j \), the corresponding direct limit is the coproduct of the family.
+    \item[ii)] Direct limits exist in the category of sets, by taking \( \varinjlim A_i \) to be the quotient of the disjoint union of the sets \( A_i \) by the equivalence relation generated by \( x_i \sim \varphi_{ij}(x_i) \) for \( i \leq j \) and \( x_i \in A_i \).
+    \item[iii)] Direct limits exist in the category of rings, as well as in the category of \( R \)-modules.
+    
+    \textit{Hint:} As a set, consider the construction of direct limit in the category of sets. To define the operations, note that given \( x \in A_i \) and \( y \in A_j \), we can find \( k \) such that \( i \leq k \) and \( j \leq k \), in which case \( x \sim \varphi_{ik}(x) \) and \( y \sim \varphi_{jk}(y) \), so that we can define the operation on \( x \) and \( y \) by using the operation in \( A_k \).
+\end{itemize}
+
+\subsection*{Examples of Direct Limit Constructions}
+\textbf{Example:} Let \( R \) be a commutative ring and let \( \Lambda \) be an arbitrary set. Let \( I \) be the set of all finite subsets of \( \Lambda \), with the order given by inclusion (note that this is a directed set). For every \( A \in I \), we consider \( R_A = R[x_i \mid i \in A] \), the polynomial \( R \)-algebra with the variables indexed by \( A \). If \( A \subseteq B \) are in \( I \), then we have an injective morphism of \( R \)-algebras \( R_A \rightarrow R_B \) and it is clear that in this way \( (R_A)_{A \in I} \) is a directed system of commutative \( R \)-algebras. We define
+\[
+R[x_i \mid i \in \Lambda] := \varinjlim_{A \in I} R_A.
+\]
+This satisfies the following universal property: for every commutative \( R \)-algebra \( S \) and every family \( (a_i)_{i \in \Lambda} \) of elements of \( S \), there is a unique \( R \)-algebra homomorphism
+\[
+f : R[x_i \mid i \in \Lambda] \rightarrow S
+\]
+such that \( f(x_i) = a_i \) for all \( i \in \Lambda \).
+
+\textbf{Example:} Suppose that \( M \) is an \( R \)-module and let \( I \) be the set of all finitely generated submodules of \( M \), ordered by inclusion (note that again \( I \) is a directed set). The family of finitely generated submodules thus becomes a direct system, and we have
+\[
+M \cong \varinjlim_{N \in I} N.
+\]
+This can be useful for reducing the proof of certain properties to finitely generated modules.
+
+
+
+
+
+
+\chapter{ProblemSet 11}
+
+\section{Generators of Tensor Products of Modules}
+Let \( R \) be a commutative ring and \( M \) and \( N \) be \( R \)-modules. Show that if \( (u_i)_{i \in I} \) is a system of generators of \( M \) and \( (y_j)_{j \in J} \) is a system of generators of \( N \), then \( (u_i \otimes v_j)_{(i,j) \in I \times J} \) is a system of generators of \( M \otimes_R N \).
+
+\section{Zero Elements in Tensor Products}
+\begin{itemize}
+    \item[i)] Show that for every ring \( R \), every right \( R \)-module \( M \), and every left \( R \)-module \( N \), we have \( m \otimes 0 = 0 \) and \( 0 \otimes n = 0 \) in \( M \otimes_R N \), for all \( m \in M \) and \( n \in N \).
+    \item[ii)] Suppose now that \( R \) is an integral domain with fraction field \( K \). Note that \( K \) has a canonical \( R \)-module structure, and show that \( (K/R) \otimes_R (K/R) = 0 \).
+\end{itemize}
+
+\section{Tensor Product of Cyclic Groups}
+Show that if \( m \) and \( n \) are relatively prime integers, then
+\[
+\mathbb{Z}/m\mathbb{Z} \otimes_{\mathbb{Z}} \mathbb{Z}/n\mathbb{Z} = 0.
+\]
+
+\section{Tensor Product of Bimodules}
+Show that if \( R \), \( S \), and \( T \) are rings and \( M \) is an \( R \)-\( S \)-bimodule and \( N \) is an \( S \)-\( T \)-bimodule, then \( M \otimes_S N \) is an \( R \)-\( T \)-bimodule.
+
+
+
+
+
+
+
+\chapter{ProblemSet 12}
+
+\section{Exactness of Additive Functors}
+Let \( R \) and \( S \) be two rings and let
+\[
+F : R\text{Mod} \rightarrow S\text{Mod}
+\]
+be an additive functor. Show that \( F \) is left (right) exact if and only if for every short exact sequence of \( R \)-modules
+\[
+0 \rightarrow M' \rightarrow M \rightarrow M'' \rightarrow 0,
+\]
+the sequence of \( S \)-modules
+\[
+0 \rightarrow F(M') \rightarrow F(M) \rightarrow F(M'')
+\]
+(respectively \( F(M') \rightarrow F(M) \rightarrow F(M'') \rightarrow 0 \)) is exact.
+
+\section{Tensor Product of Quotient Rings}
+Show that if \( I \) and \( J \) are ideals in a commutative ring \( R \), then we have an isomorphism of \( R \)-modules
+\[
+R/I \otimes_R R/J \cong R/(I + J).
+\]
+Deduce that for every positive integers \( m \) and \( n \), we have an isomorphism of Abelian groups
+\[
+\mathbb{Z}/m\mathbb{Z} \otimes_{\mathbb{Z}} \mathbb{Z}/n\mathbb{Z} \cong \mathbb{Z}/d\mathbb{Z},
+\]
+where \( d = \gcd(m, n) \).
+
+\section{Snake Lemma in Diagram Chasing}
+The following result is known as the Snake Lemma: consider the following diagram of \( R \)-modules
+\[
+\begin{array}{ccccccccc}
+& & A & \xrightarrow{f} & B & \xrightarrow{g} & C & \rightarrow & 0 \\
+0 & \rightarrow & A' & \xrightarrow{f'} & B' & \xrightarrow{g'} & C' \\
+\end{array}
+\]
+in which the rows are exact and all squares are commutative. Using “diagram chasing,” show that there is a canonical morphism of \( R \)-modules \( \delta : \ker(\gamma) \rightarrow \operatorname{coker}(\alpha) \) such that the following sequence of maps is exact:
+\[
+\ker(\alpha) \rightarrow \ker(\beta) \rightarrow \ker(\gamma) \xrightarrow{\delta} \operatorname{coker}(\alpha) \rightarrow \operatorname{coker}(\beta) \rightarrow \operatorname{coker}(\gamma),
+\]
+where the other maps are induced by \( f \), \( g \), \( f' \), and \( g' \).
+
+
+
+
+
+
+\chapter{ProblemSet 13}
+
+\section{Properties of \( \mathbb{Q} \) as a \( \mathbb{Z} \)-Module}
+Is \( \mathbb{Q} \) a projective \( \mathbb{Z} \)-module? Is it a flat \( \mathbb{Z} \)-module? Is it an injective \( \mathbb{Z} \)-module?
+
+\section{Finitely Generated Modules and Tor Functor}
+Show that if \( M \) and \( N \) are finitely generated modules over the Noetherian ring \( R \), then \( \operatorname{Tor}^R_i(M, N) \) is a finitely generated \( R \)-module for every \( i \geq 0 \).
+
+\section{Tor Functor of Cyclic Groups}
+Let \( m \) and \( n \) be positive integers. Compute
+\[
+\operatorname{Tor}^\mathbb{Z}_i(\mathbb{Z}/m\mathbb{Z}, \mathbb{Z}/n\mathbb{Z}).
+\]
+
+\section{Projective Resolution of a Field as a Module}
+Let \( k \) be a field, \( R = k[x, y] \), and consider \( k \) as an \( R \)-module via \( k \cong k[x, y]/(x, y) \). Give a projective resolution of \( k \) as an \( R \)-module.
+
+
+
+
+
+
+
+\chapter{ProblemSet 14}
+
+\section{Commutativity of Tensor Algebra of a Cyclic Module}
+Show that if \( M \) is a cyclic \( R \)-module, then the tensor algebra \( T(M) \) is commutative.
+
+\section{Cokernel of an Induced Map on Exterior Power}
+Let \( M \) be a \( 3 \times 3 \) integer matrix and suppose that \( \mathbb{Z}^3 / M\mathbb{Z}^3 \cong \mathbb{Z}/6\mathbb{Z} \oplus \mathbb{Z}/2\mathbb{Z} \). Let \( \wedge^2 M \) be the induced map \( \wedge^2(\mathbb{Z}^3) \rightarrow \wedge^2(\mathbb{Z}^3) \). Compute (with proof) the cokernel of this map.
+
+\section{Characteristic Polynomial via Trace of Exterior Powers}
+Let \( V \) be an \( n \)-dimensional vector space over a field \( K \) and \( T \in \operatorname{End}_K(V) \). Show that the characteristic polynomial of \( T \) can be written as
+\[
+c_T(x) = x^n + \sum_{i=1}^n (-1)^i \operatorname{trace}(\wedge^i(T)) \cdot x^{n-i},
+\]
+arguing as follows:
+\begin{itemize}
+    \item[i)] Show that the formula holds for \( T \) if and only if it works for \( T \otimes_K \operatorname{Id}_L \in \operatorname{End}_L(V \otimes_K L) \), where \( L \) is a field extension of \( K \). Deduce that we may assume that \( K \) is algebraically closed.
+    \item[ii)] Show that if the eigenvalues of \( T \) are \( \lambda_1, \dots, \lambda_n \in K \) (allowing for repetitions), then the eigenvalues of \( \wedge^k(T) \) are the products \( \lambda_{i_1} \cdots \lambda_{i_k} \), for \( 1 \leq i_1 < \dots < i_k \leq n \).
+    \item[iii)] Deduce the formula for \( c_T(x) \).
+\end{itemize}
+
+\section{Orthogonal Bases for Hermitian Forms}
+Let \( E \) be a finite-dimensional \( \mathbb{C} \)-vector space with a positive definite Hermitian form \( f \). Show that if \( g \) is another Hermitian form on \( E \), then there exists a basis of \( E \) that is orthogonal for both \( f \) and \( g \).
+
+\section{Signature of Quadratic Form from Polynomial Trace}
+Let \( f(x) \in \mathbb{R}[x] \) be a degree \( n \) polynomial with distinct roots, \( r \) of which are real and \( 2s \) of which are complex. Let \( A \) be the ring \( \mathbb{R}[x] / (f(x)) \). Define \( m_g \) to be the map \( h \mapsto gh \) from \( A \) to \( A \). Let \( \operatorname{Tr}(g) \) be the trace of \( m_g \), considered as an \( \mathbb{R} \)-linear endomorphism of the real vector space \( A \). Compute the signature of the quadratic form on \( A \) given by \( \langle g, h \rangle = \operatorname{Tr}(gh) \).
+
+\section{Signature of Bilinear Form Defined by a Symmetric Matrix}
+Let \( A \) be a \( 2 \times 2 \) real matrix and let \( B \) be the \( 4 \times 4 \) real symmetric matrix given by
+\[
+\begin{pmatrix} I & A \\ A^t & -I \end{pmatrix},
+\]
+where \( I \) is the \( 2 \times 2 \) identity matrix and \( A^t \) denotes the transpose of \( A \). Let \( \langle -, - \rangle \) be the bilinear form on \( \mathbb{R}^4 \) defined by \( \langle v, w \rangle = v^t B w \). Determine all possible signatures for \( \langle -, - \rangle \).
+
+
+
+
+
+\end{document}

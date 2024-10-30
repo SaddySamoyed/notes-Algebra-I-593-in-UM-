@@ -1,0 +1,634 @@
+\documentclass[lang=cn,11pt]{template}
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}%
+\usepackage{amssymb}%
+
+\title{593 HW}
+
+\begin{document}
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+\chapter{HW 1}
+
+\section{Properties of Ideals under Ring Homomorphisms}
+Let \( \phi : R \rightarrow T \) be a ring homomorphism.
+
+i) If \( I \) is a left (right, two-sided) ideal of \( T \), then
+\[
+\phi^{-1}(I) := \{ a \in R \mid \phi(a) \in I \}
+\]
+is a left (respectively right, two-sided) ideal of \( R \).
+
+ii) If \( J \) is a left (right, two-sided) ideal of \( R \) and \( \phi \) is surjective, then
+\[
+\phi(J) := \{ \phi(a) \mid a \in J \}
+\]
+is a left (respectively right, two-sided) ideal of \( T \).
+
+\section{Second Isomorphism Theorem for Rings}
+Let \( R \) be a ring, \( I \) a two-sided ideal in \( R \), and \( p : R \rightarrow R/I \) the quotient homomorphism. Show that there is an inclusion-preserving bijection between the left (right, two-sided) ideals of \( R \) that contain \( I \) and the left (respectively right, two-sided) ideals of \( R/I \), which maps \( J \subseteq R \) to
+\[
+J/I := \{ p(a) \mid a \in J \}.
+\]
+Furthermore, show that there is a ring isomorphism
+\[
+(R/I)/(J/I) \cong R/J
+\]
+for every such two-sided ideal \( J \). Finally, show that this bijection preserves the prime ideals.
+
+\section{Localization of Ideals in a Ring}
+Let \( R \) be a commutative ring, \( S \) a multiplicative subset of \( R \), and \( \phi : R \rightarrow S^{-1}R \) the canonical homomorphism.
+
+i) Show that if \( I \) is an ideal of \( R \), then
+\[
+S^{-1}I := \left\{ \frac{a}{s} \mid a \in I, s \in S \right\}
+\]
+is an ideal of \( S^{-1}R \).
+
+ii) Show that the set \( T = \{ a \mid a \in S \} \) is a multiplicative subset of \( R/I \) and that there is an isomorphism
+\[
+T^{-1}(R/I) \cong S^{-1}R / S^{-1}I.
+\]
+
+iii) An ideal \( I \) of \( R \) is \( S \)-saturated if whenever \( sa \in I \) for some \( s \in S \) and \( a \in R \), then \( a \in I \). Show that the map taking \( J \) to \( \phi^{-1}(J) \) gives an inclusion-preserving bijection between the ideals of \( S^{-1}R \) and the \( S \)-saturated ideals of \( R \). Moreover, show that this bijection preserves the prime ideals and that a prime ideal \( p \) in \( R \) is \( S \)-saturated if and only if \( S \cap p = \emptyset \).
+
+iv) Suppose that \( q \) is a prime ideal in \( R \) and \( S = R \setminus q \). Show that \( S \) is a multiplicative system (the ring \( S^{-1}R \) is denoted by \( R_q \)). Show that in this case, the bijection in iii) gives an inclusion-preserving bijection between the prime ideals in \( R_q \) and the prime ideals in \( R \) that are contained in \( q \).
+
+\section{Isomorphisms between Fraction Rings}
+Let \( R \) be a commutative ring and \( S \subseteq T \) two multiplicative subsets of \( R \). Let
+\[
+\tilde{T} := \left\{ \frac{t}{1} \mid t \in T \right\} \subset S^{-1}R
+\]
+and let \( \phi_1 : R \rightarrow S^{-1}R \), \( \phi_2 : S^{-1}R \rightarrow \tilde{T}^{-1}(S^{-1}R) \), and \( \phi_3 : R \rightarrow T^{-1}R \) be the canonical ring homomorphisms to the rings of fractions. Show that there is a unique ring homomorphism
+\[
+\psi : \tilde{T}^{-1}(S^{-1}R) \rightarrow T^{-1}R
+\]
+such that \( \psi \circ \phi_2 \circ \phi_1 = \phi_3 \) and that this is an isomorphism.
+
+
+
+
+
+
+
+
+\chapter{HW 2}
+
+\section{Radical Ideals in Commutative Rings}
+Let \( I \) be an ideal in a commutative ring \( R \).
+
+i) The radical of \( I \) is
+\[
+\text{Rad}(I) := \{ a \in R \mid a^n \in I \text{ for some } n \in \mathbb{Z}_{>0} \}.
+\]
+Show that \( \text{Rad}(I) \) is an ideal of \( R \) that contains \( I \).
+
+ii) An ideal \( J \) of \( R \) is a radical ideal if \( J = \text{Rad}(J) \). Show that if \( J \) is a radical ideal and \( I \subseteq J \), then \( \text{Rad}(I) \subseteq J \).
+
+iii) A commutative ring \( S \) is reduced if whenever \( a \in S \) and \( a^n = 0 \) for some \( n \in \mathbb{Z}_{>0} \), we have \( a = 0 \). Show that \( I \) is a radical ideal if and only if \( R/I \) is a reduced ring.
+
+\section{Idempotents in Rings}
+Let \( R \) be a ring. An element \( a \in R \) is idempotent if \( a^2 = a \). For example, 0 and 1 are idempotents. A nontrivial idempotent is an idempotent that is different from 0 and 1.
+
+i) Show that if \( a \in R \) is an idempotent, then \( 1 - a \) is an idempotent, too.
+
+ii) Suppose that \( R \) is commutative. Show that \( R \) has a nontrivial product decomposition (that is, there is an isomorphism \( R \cong R_1 \times R_2 \), where \( R_1 \) and \( R_2 \) are nonzero rings) if and only if \( R \) has nontrivial idempotents.
+
+\section{Nilpotent Elements in Rings}
+Let \( R \) be a ring and \( a, b \in R \) such that \( ab = 1 \) and \( ba \neq 1 \).
+
+i) Show that \( 1 - ba \) is an idempotent element.
+
+ii) Show that for every positive integer \( n \), the element \( b^n(1 - ba) \) is nilpotent (an element \( u \in R \) is nilpotent if \( u^m = 0 \) for some positive integer \( m \)).
+
+iii) Deduce that \( R \) has infinitely many nilpotent elements.
+
+\section{Ideals in Product of Rings}
+Let \( R_1 \) and \( R_2 \) be rings and let \( R = R_1 \times R_2 \). Show that if \( I \) is a left (right, two-sided) ideal of \( R \), then there are left (respectively right, two-sided) ideals \( I_1 \subseteq R_1 \) and \( I_2 \subseteq R_2 \) such that \( I = I_1 \times I_2 \).
+
+
+
+
+
+
+
+
+
+
+\chapter{HW 3}
+
+\section{Isomorphism of Polynomial Quotients and Rings}
+Let \( R \) be a commutative ring and let \( a \in R \). Show that there is an isomorphism of \( R \)-algebras
+\[
+R[x]/(x - a) \cong R.
+\]
+
+\section{Classification of Ideals as Maximal, Prime, or Radical}
+Determine whether each of the following ideals is maximal, prime, or radical:
+
+i) \( I = (x - \pi, y - 1) \subseteq \mathbb{R}[x, y] \).
+
+ii) \( I = 21\mathbb{Z} \subseteq \mathbb{Z} \).
+
+iii) \( I = \left( \frac{1}{2} \right) \subseteq S^{-1}\mathbb{Z}, \) where \( S = \{2^m \mid m \in \mathbb{Z}_{\geq 0} \} \).
+
+iv) \( I = (x^2 + y^2) \subseteq \mathbb{C}[x, y] \).
+
+v) \( I = (x^2 y, x y^2) \subseteq \mathbb{Q}[x, y] \).
+
+\section{Existence of Minimal Prime Ideals in Commutative Rings}
+Let \( R \) be a commutative ring. Show that every prime ideal \( P \) in \( R \) contains a minimal prime ideal, which is a prime ideal \( Q \) such that there is no prime ideal \( Q' \) with \( Q' \subset Q \).
+
+\section{Noetherian Property of Quotient and Localized Rings}
+Let \( R \) be a ring.
+
+i) Show that if \( I \) is a two-sided ideal in \( R \) and \( R \) is left (right) Noetherian, then \( R/I \) is left (respectively, right) Noetherian.
+
+ii) Show that if \( R \) is commutative and Noetherian, then for every multiplicative system \( S \subseteq R \), the ring of fractions \( S^{-1}R \) is Noetherian.
+
+\section{Structure of Ideals in the Ring of Continuous Functions}
+Let \( R \) be the ring of continuous functions defined on the interval \([0, 1]\), with values in \( \mathbb{R} \), using usual addition and multiplication of functions. For every \( c \in [0, 1] \), let \( M_c = \{ f \in R \mid f(c) = 0 \} \).
+
+i) Prove that the ring \( R \) is not Noetherian.
+
+ii) Show that each \( M_c \) is a maximal ideal in \( R \).
+
+iii) Show that conversely, given any maximal ideal \( M \) in \( R \), there is \( c \in [0, 1] \) such that \( M = M_c \). (Note: this part requires some familiarity with general topology).
+
+
+
+
+
+
+
+
+
+\chapter{HW 4}
+
+\section{Properties of Principal and Unique Factorization Domains}
+Let \( R \) be a domain, \( P \) a prime ideal in \( R \), and \( S \) a multiplicative system in \( R \) with \( 0 \notin S \).
+
+i) Show that if \( R \) is a PID, then both \( R/P \) and \( S^{-1}R \) are PIDs.
+
+ii) Show that if \( R \) is a UFD, then \( S^{-1}R \) is a UFD.
+
+iii) Provide an example where \( R \) is a UFD, but \( R/P \) is not a UFD.
+
+\section{Bezout Domains and Finitely Generated Ideals}
+A Bezout domain is an integral domain with the property that every ideal generated by two elements is principal.
+
+i) Prove that a domain is Bezout if and only if every \( a, b \in R \), not both zero, have a gcd that can be written as a linear combination of \( a \) and \( b \).
+
+ii) Prove that in a Bezout domain, every finitely generated ideal is principal.
+
+iii) Prove that a domain is a PID if and only if it is a UFD and a Bezout domain.
+
+\section{Chinese Remainder Theorem in Commutative Rings}
+Let \( R \) be a commutative ring.
+
+i) Suppose that \( I_1 \) and \( I_2 \) are ideals in \( R \) such that \( I_1 + I_2 = R \). Show that given any element \( a \in R \), there is an element \( b \in R \) such that \( b \in I_2 \) and \( b - a \in I_1 \). Using this, deduce that the canonical homomorphism \( R \rightarrow R/I_1 \times R/I_2 \) is surjective and conclude that
+\[
+R/I_1 \cap I_2 \cong R/I_1 \times R/I_2.
+\]
+
+ii) Suppose that \( I_1, \ldots, I_n \) are ideals in \( R \) such that \( I_i + I_j = R \) for all \( i \neq j \). Show that in this case we have \( I_1 + (I_2 \cap \cdots \cap I_n) = R \). Use this, part (i), and induction on \( n \) to show that the canonical homomorphism \( R \rightarrow \prod_{i=1}^n R/I_i \) induces an isomorphism
+\[
+R/(I_1 \cap \cdots \cap I_n) \cong \prod_{i=1}^n R/I_i.
+\]
+
+iii) Show that if \( I_1, \ldots, I_n \) are mutually distinct maximal ideals in \( R \), then they satisfy the hypothesis in (ii).
+
+\section{Field Structure of Quotient Rings in Gaussian Integers}
+Let \( \pi \in \mathbb{Z}[i] \) be a prime element. Show that the quotient ring \( \mathbb{Z}[i]/(\pi) \) is a field and determine its number of elements.
+
+i) Show that if \( \pi = 1 + i \), then \( \mathbb{Z}[i]/(\pi) \) is a field with 2 elements.
+
+ii) Show that if \( \pi = p \in \mathbb{Z}_{>0} \) is a prime with \( p \equiv 3 \pmod{4} \), then \( \mathbb{Z}[i]/(\pi) \) is a field with \( p^2 \) elements.
+
+iii) Show that if \( \pi \cdot \bar{\pi} = p \), where \( p \in \mathbb{Z}_{>0} \) is a prime with \( p \equiv 1 \pmod{4} \), then \( \mathbb{Z}[i]/(\pi) \) is a field with \( p \) elements.
+
+**Hint**: It may be useful to consider the isomorphism \( \mathbb{Z}[i] \cong \mathbb{Z}[x]/(x^2 + 1) \) and review Problem 4 on Problem Set 4.
+
+
+
+
+
+
+
+
+
+\chapter{HW 5}
+
+\section{Annihilators in Modules}
+Let \( R \) be a ring and let \( M \) be a left \( R \)-module.
+
+i) For every \( x \in M \), consider the annihilator of \( x \):
+\[
+\text{Ann}_R(x) := \{ a \in R \mid ax = 0 \}.
+\]
+Show that \( \text{Ann}_R(x) \) is a left ideal in \( R \).
+
+ii) Show that the annihilator of \( M \):
+\[
+\text{Ann}_R(M) := \{ a \in R \mid au = 0 \text{ for all } u \in M \}
+\]
+is a two-sided ideal of \( R \).
+
+\section{Module-Theoretic Construction of Fraction Rings}
+Let \( R \) be a commutative ring and let \( S \subseteq R \) be a multiplicative system. If \( M \) is an \( R \)-module, then on \( M \times S \) we define the following relation: \( (m_1, s_1) \sim (m_2, s_2) \) if and only if there is \( t \in S \) such that \( ts_2 m_1 = ts_1 m_2 \).
+
+i) It is clear that this relation is reflexive and symmetric. Show that it is also transitive, hence it is an equivalence relation. We denote the equivalence class corresponding to \( (m, s) \) by \( \frac{m}{s} \) and the set of equivalence classes by \( S^{-1}M \).
+
+ii) We define a structure of \( S^{-1}R \)-module on \( S^{-1}M \) as follows: we put
+\[
+\frac{u_1}{s_1} + \frac{u_2}{s_2} = \frac{s_2 u_1 + s_1 u_2}{s_1 s_2}
+\]
+for \( \frac{u_1}{s_1}, \frac{u_2}{s_2} \in S^{-1}M \), and
+\[
+\frac{a}{s} \cdot \frac{u}{t} = \frac{au}{st}
+\]
+for \( \frac{a}{s} \in S^{-1}R \) and \( \frac{u}{t} \in S^{-1}M \). Show that these operations are well-defined.
+
+iii) By restriction of scalars with respect to the canonical map \( \phi : R \rightarrow S^{-1}R \), we may consider \( S^{-1}M \) as an \( R \)-module. Show that the map \( \phi_M : M \rightarrow S^{-1}M \) given by \( \phi_M(u) = \frac{u}{1} \) is then a morphism of \( R \)-modules.
+
+\section{Support of a Module}
+Let \( R \) be a commutative ring and let \( M \) be an \( R \)-module. The support \( \text{Supp}(M) \) consists of all prime ideals \( p \) in \( R \) such that \( M_p \neq 0 \) (where \( M_p \) denotes the localization \( S^{-1}M \) with \( S = R \setminus p \)). Show that if \( M \) is a finitely generated \( R \)-module, then a prime ideal \( p \) lies in \( \text{Supp}(M) \) if and only if \( \text{Ann}_R(M) \subseteq p \).
+
+\section{Checking Properties of Modules after Localization}
+Let \( R \) be a commutative ring. Show that for an \( R \)-module \( M \), the following are equivalent:
+
+i) \( M = \{0\} \).
+
+ii) \( M_p = \{0\} \) for all prime ideals \( p \) in \( R \).
+
+iii) \( M_m = \{0\} \) for all maximal ideals \( m \) in \( R \).
+
+\section{Finitely Generated Modules}
+Let \( R \) be a ring, \( M \) a left \( R \)-module, and \( N \subseteq M \) an \( R \)-submodule. Show that if both \( N \) and \( M/N \) are finitely generated, then \( M \) is finitely generated.
+
+
+
+
+
+
+
+\chapter{HW 6}
+
+\section{Localization and Module Homomorphisms}
+Let \( R \) be a commutative ring and \( S \subseteq R \) a multiplicative system.
+
+i) Show that if \( f : M \rightarrow N \) is a morphism of \( R \)-modules, then we get an induced morphism of \( S^{-1}R \)-modules \( S^{-1}f : S^{-1}M \rightarrow S^{-1}N \) that maps \( \frac{u}{s} \) to \( \frac{f(u)}{s} \).
+
+ii) Show that if \( M \) is a submodule of \( N \) and \( f \) is the inclusion map, then \( S^{-1}f \) is injective, so we can identify \( S^{-1}M \) with a submodule of \( S^{-1}N \).
+
+iii) Show that under the assumption in (ii), we have an isomorphism
+\[
+S^{-1}N / S^{-1}M \cong S^{-1}(N/M).
+\]
+
+\section{Rank of Finitely Generated Modules over a Domain}
+Let \( R \) be a domain and let \( K = S^{-1}R \) be the fraction field of \( R \), where \( S = R \setminus \{0\} \). If \( M \) is a finitely generated \( R \)-module, then the rank of \( M \) is defined by
+\[
+\text{rank}(M) := \dim_K(S^{-1}M).
+\]
+
+i) Show that if \( M \) is a finitely generated \( R \)-module, then the rank of \( M \) is equal to the largest number of elements in a subset of \( M \) that is independent over \( R \).
+
+ii) Show that if \( M \) is a submodule of \( N \), then
+\[
+\text{rank}(N) = \text{rank}(M) + \text{rank}(N/M).
+\]
+
+\section{Noetherian Property in Rings with Ideal Intersections}
+Let \( R \) be a ring and \( I_1, \ldots, I_k \) be two-sided ideals in \( R \) such that \( I_1 \cap \cdots \cap I_k = (0) \). Show that if \( R/I_j \) is a left Noetherian ring for \( 1 \leq j \leq k \), then \( R \) is a left Noetherian ring.
+
+\section{Structure and Length of Modules in Quotient by Maximal Ideal}
+Let \( R \) be a commutative ring and let \( m \) be a finitely generated maximal ideal of \( R \). Define \( K = R/m \).
+
+i) Show that for every \( i \geq 0 \), the \( R \)-module \( m^i / m^{i+1} \) has a natural structure of \( K \)-vector space of finite dimension. Moreover, show that its \( R \)-submodules are the same as its \( K \)-vector subspaces.
+
+ii) Deduce that for every \( n \geq 1 \), the \( R \)-module \( R / m^n \) has finite length and the ring \( R / m^n \) is both Noetherian and Artinian.
+
+\section{Prime Ideals in Artinian Rings}
+Let \( R \) be a commutative ring. Show that if \( R \) is Artinian, then there are no prime ideals \( p \) and \( q \) in \( R \) such that \( p \subset q \).
+
+
+
+
+
+
+
+
+\chapter{HW 7}
+
+\section{Properties of the Ring of Formal Power Series}
+Let \( K \) be a field and let \( R = K[[x]] \) be the ring of formal power series in one variable with coefficients in \( K \).
+
+i) Show that \( R \) is a local ring. What is its maximal ideal?
+
+ii) Show that \( R \) is a PID.
+
+iii) Is \( R \) Noetherian? Is it Artinian?
+
+\section{Finite Length in Local Rings}
+Let \( k \) be a field, \( R \) a commutative \( k \)-algebra which is a local ring with maximal ideal \( m \), and let \( K = R/m \). Suppose that \( \dim_k(K) < \infty \). Show that \( R \) has finite length (as an \( R \)-module) if and only if \( \dim_k(R) < \infty \). If this is the case, then
+\[
+\dim_k(R) = \ell_R(R) \cdot \dim_k(K).
+\]
+
+\section{Equivalence of Finite Length Conditions for Modules}
+Let \( R \) be a Noetherian commutative ring and let \( M \) be a finitely generated \( R \)-module. Show that the following assertions are equivalent:
+
+i) \( M \) has finite length.
+
+ii) Every prime ideal of \( R \) containing \( \text{Ann}_R(M) \) is a maximal ideal.
+
+iii) The quotient ring \( R/\text{Ann}_R(M) \) is an Artinian ring.
+
+**Hint**: You can use the result proved in class showing that \( M \) has a finite sequence of submodules with successive quotients of the form \( R/p \), with \( p \) a prime ideal.
+
+\section{Determining Finite Length of Various Modules}
+Decide whether the following \( R \)-modules have finite length and, when this is the case, compute the length:
+
+i) \( R = \mathbb{C}[x] \) and \( M = R/(x^3 - x) \).
+
+ii) \( M = R = \mathbb{Z}[x]/(x^2 + 1) \).
+
+iii) \( R = \mathbb{Z} \) and \( M = \mathbb{Z}/4\mathbb{Z} \oplus \mathbb{Z}/8\mathbb{Z} \).
+
+iv) \( R = \mathbb{Q}[x, y] \) and \( M = R/I \), where \( I = (x, y + 1) \cdot (x - 1, y) \).
+
+
+
+
+
+
+
+
+
+\chapter{HW 8}
+
+\section{Torsion Elements and Structure of Modules over a Ring}
+Let \( R \neq \{0\} \) be a commutative ring and let \( M \) be an \( R \)-module. An element \( u \in M \) is a torsion element if there is a non-zero-divisor \( c \in R \) such that \( cu = 0 \). We say that \( M \) is a torsion module if every element of \( M \) is a torsion element, and \( M \) is torsion-free if the only torsion element in \( M \) is 0.
+
+i) Show that the subset \( T(M) \) of \( M \) consisting of torsion elements of \( M \) is a submodule of \( M \).
+
+ii) Show that \( M/T(M) \) is a torsion-free module.
+
+iii) Show that if \( M \) is a finitely generated torsion module, then there is a non-zero-divisor \( c \in \text{Ann}_R(M) \).
+
+iv) Suppose now that \( R \) is a PID and \( M \) is a finitely generated \( R \)-module. Show that if \( M \) is torsion-free, then \( M \) is free.
+
+v) Show that if \( R \) is a domain such that every torsion-free finitely generated \( R \)-module is free, then \( R \) is a PID.
+
+\section{Generators of Submodules in Modules over a PID}
+Let \( R \) be a PID. Show that if an \( R \)-module \( M \) can be generated by \( n \) elements, then every submodule \( N \) of \( M \) can be generated by \( \leq n \) elements.
+
+\section{Properties of Invertible Linear Transformations}
+Let \( V \) be a finite-dimensional vector space over \( \mathbb{Q} \) and suppose that \( T \) is an invertible linear transformation of \( V \) such that \( T^{-1} = T^2 + T \). Prove that the dimension of \( V \) is divisible by 3. If the dimension of \( V \) is precisely 3, prove that all such transformations are similar.
+
+\section{Nilpotent Matrices in Terms of Field and Matrix Size}
+Show that if \( A \) is an \( n \times n \) matrix with entries in a field \( K \) such that \( A \) is nilpotent (i.e., \( A^k = 0 \) for some \( k \)), then \( A^n = 0 \).
+
+\section{Jordan Canonical Form of a Linear Map}
+Let \( M_2(\mathbb{C}) \) be the space of \( 2 \times 2 \) matrices with complex entries. Define a \( \mathbb{C} \)-linear map \( L \) from \( M_2(\mathbb{C}) \) to itself by \( L(X) = AX - XA \), where
+\[
+A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}.
+\]
+Compute the Jordan canonical form of \( L \).
+
+\section{Extra Credit: Decomposition of Endomorphisms into Diagonalizable and Nilpotent Parts}
+Let \( V \) be a finite-dimensional vector space over \( \mathbb{C} \), and let \( T \in \text{End}_{\mathbb{C}}(V) \).
+
+i) Show that there exist \( A, B \in \text{End}_{\mathbb{C}}(V) \), with \( A \) diagonalizable, \( B \) nilpotent, and \( AB = BA \), such that \( T = A + B \).
+
+ii) Show that the \( A \) and \( B \) as in part (i) are unique.
+
+
+
+
+
+
+
+
+
+\chapter{HW 9}
+
+\section{Equivalences between Product and Coproduct in Categories}
+Let \( C \) be a pre-additive category, and let \( A, B, C \in \text{Ob}(C) \). Show that the following are equivalent:
+
+i) \( C \) is isomorphic to the product \( A \times B \).
+
+ii) There are morphisms \( i : A \rightarrow C \), \( j : B \rightarrow C \), \( p : C \rightarrow A \), \( q : C \rightarrow B \) such that \( p \circ i = 1_A \), \( q \circ j = 1_B \), \( q \circ i = 0 \), \( p \circ j = 0 \), and \( i \circ p + j \circ q = 1_C \).
+
+iii) \( C \) is isomorphic to the coproduct \( A \oplus B \).
+
+\section{Functorial Properties with Respect to Products in Categories}
+Let \( C \) and \( D \) be categories in which arbitrary (finite) products exist and let \( F : C \rightarrow D \) be a functor.
+
+i) Show that if \( (X_i)_{i \in I} \) is a (finite) family of objects in \( C \), then there is a canonical morphism
+\[
+F\left(\prod_{i} X_i\right) \rightarrow \prod_{i} F(X_i).
+\]
+We say that \( F \) commutes with products (respectively, commutes with finite products) if this is an isomorphism for every (finite) such family.
+
+ii) Show that for every \( A \in \text{Ob}(C) \), the functor \( \text{Hom}_C(A, -) : C \rightarrow \text{Sets} \) commutes with products.
+
+**Remark**: After replacing \( C \) and \( D \) in (i) by their dual categories, we obtain the notion of a “functor that commutes with (finite) coproducts.” Similarly, if \( F \) is a contravariant functor, we obtain the notion of \( F \) “taking coproducts to products” or “taking products to coproducts.” For example, the functor \( \text{Hom}_C(-, A) \) takes coproducts to products for every \( A \in \text{Ob}(C) \).
+
+\section{Canonical Isomorphisms for Product Decompositions in Categories}
+Let \( C \) be a category.
+
+i) Let \( (X_i)_{i \in I} \) be a family of objects in \( I \) and suppose we have a decomposition as disjoint union \( I = \bigsqcup_{j \in J} I_j \). Show that there is a canonical isomorphism
+\[
+\prod_{i \in I} X_i \cong \prod_{j \in J} \left( \prod_{i \in I_j} X_i \right).
+\]
+
+ii) Suppose that \( C \) and \( D \) are additive categories and \( F : C \rightarrow D \) is an additive functor. Show that \( F \) commutes with finite products.
+
+**Hint**: For part (ii), you can use the assertion in part (i) to reduce to the case of only 2 objects, in which case you can use the characterization of products in Problem 1.
+
+\section{Inverse Limits in Categories}
+Let \( (I, \leq) \) be a partially ordered set and let \( C \) be a category. An inverse system in \( C \) associated to \( I \) consists of:
+
+a) For every \( i \in I \), an object \( A_i \in \text{Ob}(C) \),
+
+b) Whenever \( i \leq j \), a morphism \( \varphi_{ji} : A_j \rightarrow A_i \), satisfying:
+
+α) For every \( i \in I \), \( \varphi_{ii} = 1_{A_i} \),
+
+β) Whenever \( i \leq j \leq k \), \( \varphi_{ji} \circ \varphi_{kj} = \varphi_{ki} \).
+
+The inverse limit (or projective limit) of this system is an object \( \varprojlim A_i \) in \( C \) with maps \( \pi_i : \varprojlim A_i \rightarrow A_i \) for all \( i \in I \) such that for every \( i \leq j \), \( \pi_i = \varphi_{ji} \circ \pi_j \), and satisfying the following universal property: given any \( M \in \text{Ob}(C) \) with morphisms \( p_i : M \rightarrow A_i \) for each \( i \in I \) such that \( p_i = \varphi_{ji} \circ p_j \) whenever \( i \leq j \), there exists a unique \( p \in \text{Hom}_C(M, \varprojlim A_i) \) such that \( \pi_i \circ p = p_i \) for all \( i \in I \).
+
+i) Show that an inverse system in \( C \) corresponding to \( I \) is the same as a functor \( (I, \leq) \rightarrow C^{\circ} \), where \( (I, \leq) \) is viewed as a category.
+
+ii) Show that inverse limits exist in the category of sets (or rings, or \( R \)-modules for a fixed ring \( R \)) by taking
+\[
+\varprojlim A_i = \left\{ (x_i) \in \prod_{i \in I} A_i \mid x_i = \varphi_{ji}(x_j) \text{ for all } i \leq j \right\},
+\]
+with \( \pi_i \) induced by projection onto the \( i \)-th component.
+
+iii) Show that for every \( Z \in \text{Ob}(C) \) and every inverse system \( (A_i)_{i \in I} \) such that the inverse limit \( \varprojlim A_i \) exists, we have a bijection, natural in \( Z \),
+\[
+\text{Hom}_C(Z, \varprojlim A_i) \cong \varprojlim \text{Hom}_C(Z, A_i).
+\]
+
+iv) When the order relation in \( I \) is given by \( i \leq j \) iff \( i = j \), show that the inverse limit \( \varprojlim A_i \) is simply the product \( \prod_{i \in I} A_i \).
+
+
+
+
+
+
+
+\chapter{HW 10}
+
+\section{Extension of Scalars and Module Quotients}
+Let \( R \) be a ring and \( I \) a two-sided ideal of \( R \). Consider the canonical surjective homomorphism \( \pi : R \rightarrow R/I \) and the corresponding “extension of scalars” functor
+\[
+F : R\text{Mod} \rightarrow R/I\text{Mod}
+\]
+given by \( F(M) = R/I \otimes_R M \) and \( F(f) = \text{Id}_{R/I} \otimes_R f \). Recall that for every \( R \)-module \( M \), we have the submodule of \( M \):
+\[
+IM = \left\{ \sum_{i=1}^r a_i m_i \mid a_i \in I, m_i \in M, r \geq 0 \right\}.
+\]
+Show that there is a natural isomorphism between \( F \) and the functor that associates to every \( R \)-module \( M \) the \( R/I \)-module \( M/IM \) and to every \( R \)-linear map \( f : M \rightarrow N \) the induced \( R/I \)-linear map \( \overline{f} : M/IM \rightarrow N/IN \).
+
+\section{Localization and Tensor Products in Module Categories}
+Let \( R \) be a commutative ring and let \( S \subseteq R \) be a multiplicative system.
+
+i) Show that the functor \( R\text{Mod} \rightarrow S^{-1}R\text{Mod} \) that maps \( M \) to \( S^{-1}M \) and \( f : M \rightarrow N \) to \( S^{-1}f \) is isomorphic to \( S^{-1}R \otimes_R - \).
+
+ii) Deduce that if \( M \) is an abelian group, then \( \mathbb{Q} \otimes_{\mathbb{Z}} M = 0 \) if and only if \( M \) is a torsion group.
+
+\section{Tensor Products of Free Modules and Direct Sum Commutativity}
+Let \( R \) be a ring and let \( M \) be a right \( R \)-module.
+
+i) Show that the functor
+\[
+M \otimes_R - : R\text{Mod} \rightarrow \text{Ab}
+\]
+commutes with direct sums.
+
+ii) Deduce that if \( R \) is commutative and \( M \) is a free \( R \)-module with basis \( (e_i)_{i \in I} \) and \( N \) is a free \( R \)-module with basis \( (f_j)_{j \in J} \), then \( M \otimes_R N \) is a free \( R \)-module with basis \( (e_i \otimes f_j)_{(i,j) \in I \times J} \).
+
+**Note**: If \( R \) is a commutative ring and \( S_1 \) and \( S_2 \) are \( R \)-algebras, then \( S_1 \otimes_R S_2 \) has a natural structure of \( R \)-algebra. Moreover, if \( S_1 \) and \( S_2 \) are commutative, then so is \( S_1 \otimes_R S_2 \).
+
+\section{Coproducts in the Category of Commutative R-Algebras}
+Show that if \( S_1 \) and \( S_2 \) are commutative \( R \)-algebras, then the \( R \)-algebra morphisms \( \varphi_i : S_i \rightarrow S_1 \otimes_R S_2 \), for \( i = 1, 2 \), given by
+\[
+\varphi_1(x) = x \otimes 1 \quad \text{and} \quad \varphi_2(x) = 1 \otimes x
+\]
+make \( S_1 \otimes_R S_2 \) the coproduct of \( S_1 \) and \( S_2 \) in the category of commutative \( R \)-algebras.
+
+
+
+
+
+
+
+\chapter{HW 11}
+
+\section{Isomorphisms Involving Polynomial Rings over Algebras}
+i) Show that if \( R \) is a commutative ring and \( S \) is a commutative \( R \)-algebra, then there is a natural isomorphism of \( S \)-algebras
+\[
+S \otimes_R R[x] \cong S[x]
+\]
+(note that we consider the left-hand side as an \( S \)-algebra via the morphism \( S \rightarrow S \otimes_R R[x] \), \( u \mapsto u \otimes 1 \)).
+
+ii) Deduce that if \( f \in R[x] \) and \( g \) is its image in \( S[x] \), then there is an isomorphism
+\[
+R[x]/(f) \otimes_R S \cong S[x]/(g).
+\]
+
+iii) Deduce that if \( f \in \mathbb{Q}[x] \) is any nonzero polynomial, then \( \mathbb{Q}[x]/(f) \otimes_{\mathbb{Q}} \mathbb{C} \) is isomorphic to a direct product of rings of the form \( \mathbb{C}[x]/(x^m) \), for a positive integer \( m \).
+
+\section{Local Properties in Submodule Inclusion and Exact Sequences}
+Let \( R \) be a commutative ring.
+
+i) If \( N \) and \( N' \) are submodules of an \( R \)-module \( M \), show that
+\[
+N \subseteq N' \text{ if and only if } N_p \subseteq N'_p \text{ for all prime ideals } p \text{ in } R
+\]
+and
+\[
+N \subseteq N' \text{ if and only if } N_p \subseteq N'_p \text{ for all maximal ideals } p \text{ in } R.
+\]
+
+ii) Consider two morphisms of \( R \)-modules \( A \xrightarrow{f} B \xrightarrow{g} C \). Show that the sequence is exact if and only if \( A_p \rightarrow B_p \rightarrow C_p \) is exact for all prime (or maximal) ideals \( p \).
+
+\section{Direct Sums and Products of Projective and Injective Modules}
+Let \( R \) be a ring and \( (M_i)_{i \in I} \) a family of left \( R \)-modules.
+
+i) Show that if all \( M_i \) are projective modules, then \( \bigoplus_{i \in I} M_i \) is a projective module.
+
+ii) Show that if all \( M_i \) are injective modules, then \( \prod_{i \in I} M_i \) is an injective module.
+
+\section{Flatness in Tensor Products of Modules}
+Let \( R \) and \( S \) be rings, \( M \) a right \( R \)-module, and \( N \) an \( R \)-\( S \)-bimodule. Show that if \( M \) is flat over \( R \) and \( N \) is flat as an \( S \)-module, then \( M \otimes_R N \) is flat as an \( S \)-module.
+
+\section{Split Exact Sequences under Additive Functors}
+Let \( R \) and \( S \) be rings and let \( F : R\text{Mod} \rightarrow S\text{Mod} \) be an additive functor. Show that if
+\[
+0 \rightarrow M' \rightarrow M \rightarrow M'' \rightarrow 0
+\]
+is a split short exact sequence of \( R \)-modules, then
+\[
+0 \rightarrow F(M') \rightarrow F(M) \rightarrow F(M'') \rightarrow 0
+\]
+is a split exact sequence.
+
+
+
+
+
+
+
+
+
+\chapter{HW 12}
+
+\section{Kernel Dimension in Tensor Products over Prime Fields}
+Let \( M \) and \( N \) be finitely generated \( \mathbb{Z} \)-modules, and let \( h : M \rightarrow N \) be a \( \mathbb{Z} \)-linear homomorphism. For a prime number \( p \), let \( h_p : M \otimes_{\mathbb{Z}} \mathbb{F}_p \rightarrow N \otimes_{\mathbb{Z}} \mathbb{F}_p \) be the map \( h \otimes \text{Id} \), where \( \mathbb{F}_p = \mathbb{Z}/p\mathbb{Z} \). We consider \( h_p \) as a map of \( \mathbb{F}_p \)-vector spaces. Show that there is an integer \( d \) (depending on \( M \), \( N \), and \( h \)) such that \( \dim_{\mathbb{F}_p} \ker(h_p) = d \) for all sufficiently large \( p \).
+
+\section{Diagonalizability of a Linear Map under Rotation}
+Let \( f : \mathbb{R}^2 \rightarrow \mathbb{R}^2 \) be the linear map given by “rotation by 90 degrees counterclockwise.” Determine whether \( f \) is diagonalizable.
+
+\section{Properties of Ideals in a Unique Factorization Domain}
+Let \( R \) be a Unique Factorization Domain (UFD) and let \( u \) and \( v \) be two nonzero elements of \( R \).
+
+i) Prove or disprove: the ideal \( uR \cap vR \) is necessarily principal.
+
+ii) Prove or disprove: The ideal \( uR + vR \) is necessarily principal.
+
+\section{Maximality of Prime Ideals in Integral Domains}
+Let \( R \) be a commutative ring equipped with an element \( f \). Suppose that \( R \) is an integral domain, \( (f) \) is a prime ideal, and that the localization \( R_f \) is a field. Show that \( (f) \) is a maximal ideal in \( R \).
+
+\section{Characterization of Projective Modules via Homomorphisms}
+Let \( R \) be a ring and \( M \) an \( R \)-module. Show that \( M \) is projective if and only if there is a family \( (x_i)_{i \in I} \) of elements of \( M \) and a family \( (f_i)_{i \in I} \) of elements of \( \text{Hom}_R(M, R) \) such that:
+
+i) For every \( x \in M \), the set \( \{ i \in I \mid f_i(x) \neq 0 \} \) is finite.
+
+ii) For every \( x \in M \), we have \( x = \sum_{i \in I} f_i(x)x_i \).
+
+\section{Structure of Quotients in Principal Ideal Domains}
+Let \( R \) be a PID which is free of rank \( n \) as a \( \mathbb{Z} \)-module, and let \( \pi \) be a prime element of \( R \). Show that \( |R/\pi R| \) is of the form \( p^k \) for some prime integer \( p \) and some \( 1 \leq k \leq n \).
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
